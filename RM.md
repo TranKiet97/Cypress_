@@ -39,3 +39,29 @@
 
 ========================================================================================
 > PUT request, updating an existing resource
+
+========================================================================================
+> How to locate elements
+    Sử dụng $ để lấy 1 giá trị đầu và $$ để lấy tất cả giá trị
+    Mở inspect > tab console
+    1. Theo id: $('#username')
+    2. Theo attributes: $('[name="username"]')  or  $('input[name="username"]')
+    3. Theo tabname: $('input')
+    4. Theo giá trị động: 
+        - containing Finding  $$('[class*="FooterSubheading]')
+        - starting Finding    $$('[class^="style_"]')
+        - ending Finding      $$('[class$="heading"]')
+
+========================================================================================
+> Open page, input, click and cy wait method
+    Vào file cypress.config.js và thêm:
+        specPattern: 'cypress/tests/**.*',
+        baseUrl: 'https://the-internet.herokuapp.com'
+    Vào file package.json và thêm vào object scripts:
+        "dev": "cypress open",
+        "test": "cypress run --browser chrome --headed"
+
+========================================================================================
+> Handle mutil matched elements, Single test run, hot reload
+    Để run 1 file test ta dùng: yarn test --spec ./cypress/tests/filename.js
+    Multiple matching using: eq, closure, each
