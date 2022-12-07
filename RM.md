@@ -4,7 +4,7 @@
 - install Cypress: cypress.io
     > npm init -y       // khởi tạo project js đơn giản
     > npm i yarn -g     // cài đặt yarn
-    > yarn add -D cypress
+    > yarn add -D cypress or npm i cypress --save-dev
 - create .ignore file (+-)
 - clone project
     > yarn
@@ -46,7 +46,7 @@
     Mở inspect > tab console
     1. Theo id: $('#username')
     2. Theo attributes: $('[name="username"]')  or  $('input[name="username"]')
-    3. Theo tabname: $('input')
+    3. Theo tabname: $('input')         or      $('div>input[name="username"]')
     4. Theo giá trị động: 
         - containing Finding  $$('[class*="FooterSubheading]')
         - starting Finding    $$('[class^="style_"]')
@@ -63,5 +63,5 @@
 
 ========================================================================================
 > Handle mutil matched elements, Single test run, hot reload
-    Để run 1 file test ta dùng: yarn test --spec ./cypress/tests/filename.js
+    Để run 1 file test ta dùng: yarn test --spec .\cypress\tests\filename.js
     Multiple matching using: eq, closure, each
