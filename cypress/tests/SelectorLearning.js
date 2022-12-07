@@ -6,7 +6,7 @@ describe('Element interaction', () => {
         cy.get("#username").type("tomsmith");
 
         // Find password by attribute name then input the text
-        cy.get("[name='password']").type("SuperSecretPassword!"); 
+        cy.get("div>input[name='password']").type("SuperSecretPassword!"); 
 
         // Find login btn by attribute and tag name then click
         cy.get("button[type=\"submit\"]").click(); 
