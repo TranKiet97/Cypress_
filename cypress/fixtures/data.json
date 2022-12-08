@@ -1,0 +1,7 @@
+{
+    "standardUsername": "tomsmith",
+    "systemPassword": "SuperSecretPassword!",
+    "lockedUsername": "locked_out_user",
+    "dummyUsername": "dummy_test",
+    "dummyPassword": "dummy_password"
+}

@@ -17,3 +17,27 @@
 
     When you use it.only('',()=>{}) that only this test case is executed
 
+================================================================================================================
+> CYPRESS URL
+    Create the cypress.json file with the code inside
+    1- cy.title()
+    2- cy.url()
+    3- cy.location('protocol').should('contains','https')
+    4- cy.location('hostname').should('eq','www.saucedemo.com')
+    5- cy.location('pathname').should('eq','/inventory.html')
+
+================================================================================================================
+> SELECTORS IN CYPRESS
+    1- get()
+    2- eq()
+    3- first()
+    4- last()
+    5- filter()
+    6- find()
+    7- parent()
+
+================================================================================================================
+> CYPRESS FIXTURES EXPLAINED
+    Create the data.json file in fixtures folder
+    When using fixture(), we should use function(){} instead of arrow function
+    
