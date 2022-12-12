@@ -40,4 +40,105 @@
 > CYPRESS FIXTURES EXPLAINED
     Create the data.json file in fixtures folder
     When using fixture(), we should use function(){} instead of arrow function
+
+================================================================================================================
+> CYPRESS INTERCEPT RESPONSE
+    Spy and stub network requests and responses
+
+    Syntax
+    1- spying only
+        cy.intercept(url)
+        cy.intercept(method, url)
+        cy.intercept(routeMatcher)
+    2- spycing and response stubbing
+        cy.intercept(url, staticResponse)
+        cy.intercept(method, url, staticResponse)
+        cy.intercept(routeMatcher, staticResponse)
+        cy.intercept(url, routeMatcher, staticResponse)
+    3- spying, dynamic stubbing, request modification, etc.
+        cy.intercept(url, routeHandler)
+        cy.intercept(method, url, routeHandler)
+        cy.intercept(routeMatcher, routeHandler)
+        cy.intercept(url, routeMatcher, routeHandler)
+
+    Arguments
+    1- method (String)  - GET, POST, PUT, etc
+    2- url (String, Glob, RegExp)
+    3- routeMatcher (RouteMatcher) - is an object used to match the incoming HTTP requests with this intercepted route - auth, headers, hostname, https, method, middleware, path, pathname, port, query, etc.
+    4- staticResponse (StaticResponse) - statusCode, headers, body, etc.
+    5- routeHandler (Function)
+
+    Waiting on a request - Use cy.wait() with aliasing an intercepted route to wait for the request/response cycle to complete
+
+    You can chain .its() and .should() to assert against request/response cycles: 
+        cy.wait('@someRoute').its('request.body').should('include', 'user')
+        cy.wait('@someRoute').its('response.statusCode').should('eq', 500)
+
+    You can use cy.wait() to wait on requests that end with network errors:
+        cy.intercept('GET', '/should-err', { forceNetworkError: true }).as('err')
+        cy.wait('@err').should('have.property', 'error')
+
+================================================================================================================
+> PAGE OBJECT MODEL
+    Reach out the pages folder and create a page object files
+    
+================================================================================================================
+> ITERATE over JSON OBJECT
+    Reach out the fixtures folder and create a data file
+    In cypress file, import from page object files and data file
+
+================================================================================================================
+> USING WRITEFILE AND READFILE
+    Write a file: write to a file with the specified contents
+        Syntax:
+            cy.writeFile(filePath, contents)
+            cy.writeFile(filePath, contents, encoding)
+            cy.writeFile(filePath, contents, options)
+            cy.writeFile(filePath, contents, encoding, options)
+        Arguments
+            1- filePath (String) (within the project root)
+            2- contents (String, Array, Object or Buffer) to be written to the file
+            3- encoding (String) to be used when writing to the file (ascii, base64, binary, hex, utf-8, etc.)
+            4- options (Object)
+    
+    Read a file and yield its contents
+        Syntax:
+            cy.readFile(filePath)
+            cy.readFile(filePath, encoding)
+            cy.readFile(filePath, options)
+            cy.readFile(filePath, encoding, options)
+        Examples
+            1- Text
+                // path/to/message.txt
+                Hello World
+
+                cy.readFile('path/to/message.txt').should('eq', 'Hello World') // true
+            2- JSON
+                // data.json
+                {
+                  "name": "Eliza",
+                  "email": "eliza@example.com"
+                }
+
+                cy.readFile('path/to/data.json').its('name').should('eq', 'Eliza') // true
+            3- YAML
+                const YAML = require('yamljs')
+
+                cy.readFile('languages/en.yml').then((str) => {
+                // parse the string into object literal
+                const english = YAML.parse(str)
+
+                cy.get('#sidebar')
+                    .find('.sidebar-title')
+                    .each(($el, i) => {
+                    englishTitle = english.sidebar[i]
+
+                    expect($el.text()).to.eq(englishTitle)
+                    })
+                })
+
+================================================================================================================
+> CYPRESS ASSERTIONS
+    Assertions are the validation steps that determine whether the specified step of the automated test case succeeded
+    In actual, Assertions validate the desireed state of your elements, objects or applications under test
     
