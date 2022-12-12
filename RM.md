@@ -65,3 +65,18 @@
 > Handle mutil matched elements, Single test run, hot reload
     Để run 1 file test ta dùng: yarn test --spec .\cypress\tests\filename.js
     Multiple matching using: eq, closure, each
+
+========================================================================================
+> DELETE method
+    require DELETE method sẽ trả về respond là một body rỗng 
+
+========================================================================================
+> REQUEST CHAINING and understand then then method in Cypress
+
+========================================================================================
+> ENVIRONMENT variables and custom commands
+    Cypress.env() // {host: 'kevin.dev.local', api_server: 'http://localhost:8888/api/v1'}
+    Cypress.env('host') // 'kevin.dev.local'
+    Cypress.env('api_server') // 'http://localhost:8888/api/v1/'
+
+    In Terminal:    yarn test --spec .\cypress\tests\filename.js --env host=kevin.dev.local,api_server=http://localhost:8888/api/v1
