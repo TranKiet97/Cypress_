@@ -40,9 +40,3 @@
 > CYPRESS FIXTURES EXPLAINED
     Create the data.json file in fixtures folder
     When using fixture(), we should use function(){} instead of arrow function
-
-================================================================================================================
-> OWN CYPRESS COMMAND
-    Reach out to ./support/commands.js
-    Syntax: Cypress.Commands.add();
-    
