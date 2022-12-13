@@ -6,12 +6,20 @@
   "scripts": {
     "dev": "cypress open",
     "showtest": "cypress run --browser chrome --headed",
-    "test": "cypress run --browser chrome"
+    "test": "cypress run --browser chrome",
+    "test:mocha-reporter": "yarn test --reporter mochawesome --reporter-options reportDir=\"cypress/results\",overwrite=false,html=false,json=true",
+    "merge-report": "mochawesome-merge \"cypress/results/*.json\" > index.json",
+    "build-report": "marge index.json",
+    "open-report": "yarn merge-report && yarn build-report && serve mochawesome-report"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^11.2.0"
+    "cypress": "11.2.0",
+    "marge": "1.0.1",
+    "mochawesome": "7.1.3",
+    "mochawesome-merge": "4.2.2",
+    "serve": "^14.1.2"
   }
 }

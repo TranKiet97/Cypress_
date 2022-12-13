@@ -28,3 +28,4 @@ Cypress.Commands.add("typeLogin", (username, password) => {
     cy.get("div>input[name='password']").type(password);
     cy.get('button[type="submit"]').click();
 });
+
