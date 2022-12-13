@@ -80,3 +80,18 @@
     Cypress.env('api_server') // 'http://localhost:8888/api/v1/'
 
     In Terminal:    yarn test --spec .\cypress\tests\filename.js --env host=kevin.dev.local,api_server=http://localhost:8888/api/v1
+
+========================================================================================
+> Using JSDoc for custom command to resolve the reference
+
+========================================================================================
+> Test report
+    Cài đặt mochawesome > yarn add -D mochawesome
+                        > yarn add -D mochawesome-merge
+                        > yarn add -D marge
+                        > yarn add -D serve
+    Trong file config   > reporter: "mochawesome"
+    Thêm vào script (packages.json) > "test:mocha-reporter": "yarn test --reporter mochawesome --reporter-options reportDir=\"results\",overwrite=false,html=false,json=true"
+                                    > "merge-report": "mochawesome-merge \"cypress/results/*.json\" > index.json"
+                                    > "build-report": "marge index.json"
+                                    > "open-report": "yarn merge-report && yarn build-report && serve mochawesome-report"

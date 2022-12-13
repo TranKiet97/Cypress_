@@ -6,6 +6,7 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     specPattern: 'cypress/api_test/**.*',
-    baseUrl: 'https://the-internet.herokuapp.com'
+    baseUrl: 'https://the-internet.herokuapp.com',
+    reporter: "mochawesome"
   },
 });

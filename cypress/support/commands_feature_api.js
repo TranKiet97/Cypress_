@@ -1,3 +1,9 @@
+/**
+ * @memberof cy
+ * @method createPost
+ * @param {Object} postBody
+ */
+
 Cypress.Commands.add("createPost", postBody => {
     cy.request({
         method: "POST",
