@@ -2,5 +2,4 @@ node_modules/
 videos/
 screenshots/
 results/
-mochawesome-report/
 package-lock.json
