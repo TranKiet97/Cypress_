@@ -142,3 +142,74 @@
     Assertions are the validation steps that determine whether the specified step of the automated test case succeeded
     In actual, Assertions validate the desireed state of your elements, objects or applications under test
     
+================================================================================================================
+> VARIABLES && ALIASES
+    - Alias doesnt work with arrow functions
+    - When using closures you'll always have access to the objects that were yielded to you without assigning them
+    - Return Value
+    1- Closures
+
+cy.get('button').then(($btn) => {
+
+  // store the button's text
+  const txt = $btn.text()
+
+  // submit a form
+  cy.get('form').submit()
+
+  // compare the two buttons' text
+  // and make sure they are different
+  cy.get('button').should(($btn2) => {
+    expect($btn2.text()).not.to.eq(txt)
+  })
+})
+
+// these commands run after all of the
+// other previous commands have finished
+cy.get(...).find(...).should(...)
+
+    2- Debugging
+
+cy.get('button').then(($btn) => {
+  // inspect $btn <object>
+  debugger
+
+  cy.get('[data-testid="countries"]')
+    .select('USA')
+    .then(($select) => {
+      // inspect $select <object>
+      debugger
+
+      cy.clock().then(($clock) => {
+        // inspect $clock <object>
+        debugger
+
+        $btn // is still available
+        $select // is still available too
+      })
+    })
+})
+
+    3- Variables
+        HTML file:
+<button>increment</button>
+you clicked button <span data-testid="num">0</span> times
+        
+        Cypress code:
+cy.get('[data-testid="num"]').then(($span) => {
+  // capture what num is right now
+  const num1 = parseFloat($span.text())
+
+  cy.get('button')
+    .click()
+    .then(() => {
+      // now capture it again
+      const num2 = parseFloat($span.text())
+
+      // make sure it's what we expected
+      expect(num2).to.eq(num1 + 1)
+    })
+})
+
+    - Aliases
+    
