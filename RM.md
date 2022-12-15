@@ -95,3 +95,6 @@
                                     > "merge-report": "mochawesome-merge \"cypress/results/*.json\" > index.json"
                                     > "build-report": "marge index.json"
                                     > "open-report": "yarn merge-report && yarn build-report && serve mochawesome-report"
+
+========================================================================================
+> defaultTimeOut scopes
