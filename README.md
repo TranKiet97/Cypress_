@@ -150,7 +150,9 @@
 
 it('has access to text', function () {
   this.text // is now available
-})================================================================================================================
+})
+
+================================================================================================================
 > VARIABLES && ALIASES
     - Alias doesnt work with arrow functions
     - When using closures you'll always have access to the objects that were yielded to you without assigning them
@@ -401,3 +403,122 @@ it('works in the second test', () => {
   cy.get('@exampleValue').should('equal', 'some value')
 })
 
+================================================================================================================
+> CYPRESS.BROWSER
+    Cypress.browser returns you properties of the browser
+      properties = [channel, displayName, family, isChosen, majorVersion, minorVersion, name, path, version, isHeadless, isHeaded]
+    Check that Chrome specific styles are applied
+
+it('has correct Chrome specific css property', () => {
+  // if in Chrome, check css property was properly applied
+  if (Cypress.browser.name === 'chrome') {
+    cy.get('.header').should('have.css', 'margin-right').and('eq', '0')
+  }
+})
+
+    Screenshot only in headless browser
+
+================================================================================================================
+> CYPRESS.DOM
+    Cypress.dom.method() is a collection of DOM related helper methods
+    1- Is attached
+        Returns a boolean indicating whether an element is attached to the DOM
+
+cy.get('button').then(($el) => {
+  Cypress.dom.isAttached($el) // true
+})
+
+    2- Is descendent
+        Returns a boolean indicating whether an element is a descendent of another element
+
+cy.get('div').then(($el) => {
+  Cypress.dom.isDescendent($el.parent(), $el) // true
+})
+
+    3- Is detached
+        Returns a boolean indicating whether an element is detached from the DOM
+
+cy.get('button').then(($el) => {
+  Cypress.dom.isDetached($el) // false
+})
+
+    4- Is document
+        Returns a boolean indicating whether a node is of document type
+
+cy.get('p').then(($el) => {
+  Cypress.dom.isDocument($el) // false
+})
+
+    5- Is DOM
+        Returns a boolean indicating whether an object is a DOM object
+    
+    6- Is element
+        Returns a boolean indicating whether an object is a DOM element
+
+    7- Is focusable
+        Returns a boolean indicating whether an element can receive focus
+
+cy.get('input').then(($el) => {
+  Cypress.dom.isFocusable($el) // true
+})
+
+    8- Is focused
+        Returns a boolean indicating whether an element currently has focus
+    
+    9- Is hidden
+        Returns a boolean indicating whether an element is hidden
+
+cy.get('p').then(($el) => {
+  Cypress.dom.isHidden($el) // false
+})
+
+    10- Is jQuery
+        Returns a boolean indicating whether an object is a jQuery object
+
+    11- Is scrollable
+        Returns a boolean indicating whether an element is scrollable
+
+cy.get('body').then(($el) => {
+  Cypress.dom.isScrollable($el) // true
+})
+
+    12- Is visible
+        Returns a boolean indicating whether an element is visible
+
+cy.get('img').then(($el) => {
+  Cypress.dom.isVisible($el) // true
+})
+
+    13. Is window
+        Returns a boolean indicating whether an object is a window object
+    
+    14- Unwrap
+        Returns an array of raw elements pulled out from a jQuery object
+
+cy.get('body').then(($el) => {
+  Cypress.dom.unwrap($el)
+})
+
+    15- Wrap
+        Returns a jQuery object obtained by wrapping an object in jQuery
+
+================================================================================================================
+> CYPRESS.ARCH
+    Cypress.arch returns you the CPU architecture name of the underlying OS
+
+================================================================================================================
+> CYPRESS.KEYBOARD
+    The Keyboard API allows you set the default values for how the .type() command is executed
+    1- Slow down typing by increasing the keystroke delay
+
+Cypress.Keyboard.defaults({
+  keystrokeDelay: 200,
+})
+
+    2- Remove the keystroke delay
+
+Cypress.Keyboard.defaults({
+  keystrokeDelay: 0,
+})
+
+    A great place to put this configuration is in the supportFile, since it is loaded before any test files are evaluated or set the keystroke delay in test configuration

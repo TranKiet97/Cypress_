@@ -6,7 +6,11 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
     specPattern: 'cypress/JoanMedia/**.*',
-    reporter: "mochawesome"
+    reporter: "mochawesome",
+    experimentalStudio: true,
+    chromeWebSecurity: false,
+    $schema: "https://on.cypress.io/cypress.schema.json",
+    // keystrokeDelay: 500,
   },
   defaultCommandTimeout: 10000
 });
