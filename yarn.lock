@@ -1114,7 +1114,7 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-marge@1.0.1:
+marge@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/marge/-/marge-1.0.1.tgz#52d6026911e62e1dd1cf60a07313dde285a8370c"
   integrity sha512-r7ILDBfoJZOhl70owHMdi9cpWufLYmOQuFJmTks+KVJzqSM1owBH7enp+N4D3Cfi6fphQYdGCmORnMnCq4DNrg==
@@ -1167,7 +1167,7 @@ minimist@^1.2.0, minimist@^1.2.6:
   resolved "https://registry.npmjs.org/minimist/-/minimist-1.2.7.tgz"
   integrity sha512-bzfL1YUZsP41gmu/qjrEk0Q6i2ix/cVeAhbCbqH9u3zYutS1cLg00qhrD0M2MVdCcx4Sc0UpP2eBWo9rotpq6g==
 
-mochawesome-merge@4.2.2:
+mochawesome-merge@^4.2.2:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/mochawesome-merge/-/mochawesome-merge-4.2.2.tgz#67164973f8efeefcc206764c3702aa2d5f0ba406"
   integrity sha512-ZHeZcChGhb3If7fjSVuyB9rmDH86inNtsTb1ONYq1h0L1IduldFu38bJDcow46alMpiYQgJ7cPhv6nwpCwbJQw==
@@ -1194,7 +1194,7 @@ mochawesome-report-generator@^6.2.0:
     validator "^13.6.0"
     yargs "^17.2.1"
 
-mochawesome@7.1.3:
+mochawesome@^7.1.3:
   version "7.1.3"
   resolved "https://registry.yarnpkg.com/mochawesome/-/mochawesome-7.1.3.tgz#07b358138f37f5b07b51a1b255d84babfa36fa83"
   integrity sha512-Vkb3jR5GZ1cXohMQQ73H3cZz7RoxGjjUo0G5hu0jLaW+0FdUxUwg3Cj29bqQdh0rFcnyV06pWmqmi5eBPnEuNQ==

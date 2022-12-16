@@ -1,4 +1,4 @@
-describe("Test PUT request", () => {
+describe("Test PUT Method", () => {
   it("Should be able to send PUT request and verify the response", () => {
     let url = "https://jsonplaceholder.typicode.com/posts/1";
 

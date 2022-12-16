@@ -1,4 +1,4 @@
-describe("Test POST request", () => {
+describe("Test POST Method", () => {
   it("Should be able to send POST request and verify the response", () => {
     let url = "https://jsonplaceholder.typicode.com/posts";
 

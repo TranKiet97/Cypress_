@@ -1,4 +1,4 @@
-describe('Testing DELETE Method', () => {
+describe('Test DELETE Method', () => {
     it('Should be able to send a DELETE request with Cypress', () => {
         cy.request({
             method: "DELETE",

@@ -95,3 +95,15 @@
                                     > "merge-report": "mochawesome-merge \"cypress/results/*.json\" > index.json"
                                     > "build-report": "marge index.json"
                                     > "open-report": "yarn merge-report && yarn build-report && serve mochawesome-report"
+
+========================================================================================
+> Setup Jenkins to run and display report with HTML Publisher plugin
+    Download and install the Jenkins
+        1- Install java version 17 and set up invironment
+        2- Go to https://www.jenkins.io/download/
+        3- Download stable Generic War file
+        4- Go to the location where you save the downloaded war file
+        5- Open the terminal there OR simple open terminal/Command Prompt then change directory to that location
+        6- Hit the command below to start the Jenkins server    > java -jar jenkins.war
+        7- Open the url https://localhost:8080
+        8- Input that initialization password to login

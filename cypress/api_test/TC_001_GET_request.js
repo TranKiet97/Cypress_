@@ -1,4 +1,4 @@
-describe('Test GET request', () => {
+describe('Test GET Method', () => {
     it('Should be able to send GET request and verify the response', () => {
         cy.request({
             url: 'https://jsonplaceholder.typicode.com/posts',
