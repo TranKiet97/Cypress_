@@ -98,3 +98,17 @@
 
 ========================================================================================
 > defaultTimeOut scopes
+    1- Increase time to retry
+        - change the default timeout for all commands
+
+cypress run --config defaultCommandTimeout=10000   
+
+        - pass the individual command's { timeout: ms } option to retry for a different period of time
+
+// we've modified the timeout which affects default + added assertions
+cy.get('[data-testid="mobile-nav"]', { timeout: 10000 })
+  .should('be.visible')
+  .and('contain', 'Home')
+
+    2- Disable retry
+        - Overriding the timeout to 0 will essentially disable retrying the query or waiting on an other, since it will spend 0 milliseconds retrying
