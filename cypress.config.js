@@ -10,7 +10,8 @@ module.exports = defineConfig({
     experimentalStudio: true,
     chromeWebSecurity: false,
     $schema: "https://on.cypress.io/cypress.schema.json",
+    baseUrl: "https://the-internet.herokuapp.com/"
     // keystrokeDelay: 500,
   },
-  defaultCommandTimeout: 300
+  defaultCommandTimeout: 600
 });

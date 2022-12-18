@@ -112,3 +112,11 @@ cy.get('[data-testid="mobile-nav"]', { timeout: 10000 })
 
     2- Disable retry
         - Overriding the timeout to 0 will essentially disable retrying the query or waiting on an other, since it will spend 0 milliseconds retrying
+
+======================================================================================== 
+> Handle checkboxes, Handle Dropdown
+
+========================================================================================
+> Page Object Model
+    - in cypress folder, create a folder models/pages
+    
