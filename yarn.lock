@@ -541,10 +541,10 @@
     "shebang-command" "^2.0.0"
     "which" "^2.0.1"
 
-"cypress@^12.1.0":
-  "integrity" "sha512-7fz8N84uhN1+ePNDsfQvoWEl4P3/VGKKmAg+bJQFY4onhA37Ys+6oBkGbNdwGeC7n2QqibNVPhk8x3YuQLwzfw=="
-  "resolved" "https://registry.npmjs.org/cypress/-/cypress-12.1.0.tgz"
-  "version" "12.1.0"
+"cypress@^12.4.1":
+  "integrity" "sha512-IFMPzc1RJ22Fac+YbdqywtpcuqZXqQJh+JqZDXn+A15zG/dw99njfv8f0bTvD+WAHhP118+xWG/VwilkFg1rnA=="
+  "resolved" "https://registry.npmjs.org/cypress/-/cypress-12.4.1.tgz"
+  "version" "12.4.1"
   dependencies:
     "@cypress/request" "^2.88.10"
     "@cypress/xvfb" "^1.2.4"

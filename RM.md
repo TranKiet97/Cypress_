@@ -119,4 +119,38 @@ cy.get('[data-testid="mobile-nav"]', { timeout: 10000 })
 ========================================================================================
 > Page Object Model
     - in cypress folder, create a folder models/pages
-    
+
+========================================================================================
+> [within] and [find] method in Cypress
+    - within(): cô lập đối tượng cần tìm trong một vùng (component) cụ thể
+    - Scopes all subsequent cy commands to within this element. Useful when working within a particular group of elements such as a <form>
+    - Syntax:
+        .within(callbackFn)
+        .within(options, callbackFn)
+    - Example:
+        <form>
+            <input name="email" type="email" />
+            <input name="password" type="password" />
+            <button type="submit">Login</button>
+        </form>
+
+        cy.get('form').within(($form) => {
+            // you have access to the found form via
+            // the jQuery object $form if you need it
+
+            // cy.get() will only search for elements within form,
+            // not within the entire document
+            cy.get('input[name="email"]').type('john.doe@email.com')
+            cy.get('input[name="password"]').type('password')
+            cy.root().submit()
+        })
+    - Find(): Get the descendent DOM elements of a specific selector
+
+========================================================================================
+> Page Object advanced, component base design
+
+========================================================================================
+> Get element data and use in another method
+
+========================================================================================
+> Get UI data from list of elements and verify against static data
