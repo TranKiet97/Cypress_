@@ -160,3 +160,6 @@ cy.get('[data-testid="mobile-nav"]', { timeout: 10000 })
 
 ========================================================================================
 > Using before/beforeEach hook to intercept network request
+
+========================================================================================
+> cookies and login with login API request

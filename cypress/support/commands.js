@@ -29,3 +29,24 @@ Cypress.Commands.add("typeLogin", (username, password) => {
     cy.get('button[type="submit"]').click();
 });
 
+/**
+ * @memberof cy
+ * @method Login
+*/
+Cypress.Commands.add("Login", (username, password) => {
+    cy.request({
+        url: 'https://api.demoblaze.com/login',
+        method: 'POST',
+        headers: {
+            contentType: 'application/json'
+        },
+        body: {
+            username: username, password: btoa(password)
+        }
+    }).then(res => {
+        cy.log(res.body)
+        const authToken = res.body.split(' ')[1];
+        cy.log(authToken)
+        cy.setCookie('tokenp_', authToken)
+    })
+})
