@@ -154,3 +154,9 @@ cy.get('[data-testid="mobile-nav"]', { timeout: 10000 })
 
 ========================================================================================
 > Get UI data from list of elements and verify against static data
+
+========================================================================================
+> Intercept the request and verify UI data against backend data
+
+========================================================================================
+> Using before/beforeEach hook to intercept network request
